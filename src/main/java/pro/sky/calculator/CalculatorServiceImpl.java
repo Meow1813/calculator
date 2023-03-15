@@ -4,6 +4,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
+    @Override
+    public String welcome(){
+        return "Добро пожаловать в калькулятор!";
+    }
 
     public static boolean isNumeric(String str) {
         try {
@@ -17,9 +21,9 @@ public class CalculatorServiceImpl implements CalculatorService {
     @Override
     public String errorChecker(String num1, String num2) {
         if (num1.isEmpty() || num2.isEmpty()) {
-            return "Ошибка, недостаточно чисел";
+            return "Ошибка, недостаточно чисел!";
         } else if (!isNumeric(num1) || !isNumeric(num2)) {
-            return "Ошибка, введите число";
+            return "Ошибка, введите число!";
         }
         return null;
     }
